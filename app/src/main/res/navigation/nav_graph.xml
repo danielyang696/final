@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/storeListFragment">
+
+    <fragment
+        android:id="@+id/storeListFragment"
+        android:name="ntub.imd.afinal.StoreListFragment"
+        android:label="店家列表"
+        tools:layout="@layout/fragment_store_list">
+        <action
+            android:id="@+id/action_storeListFragment_to_storeEditFragment"
+            app:destination="@id/storeEditFragment" />
+        <action
+            android:id="@+id/action_storeListFragment_to_favoriteStoreFragment"
+            app:destination="@id/favoriteStoreFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storeEditFragment"
+        android:name="ntub.imd.afinal.StoreEditFragment"
+        android:label="編輯店家"
+        tools:layout="@layout/fragment_store_edit">
+        <argument
+            android:name="storeId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoriteStoreFragment"
+        android:name="ntub.imd.afinal.FavoriteStoreFragment"
+        android:label="最愛店家"
+        tools:layout="@layout/fragment_favorite_store">
+        <action
+            android:id="@+id/action_favoriteStoreFragment_to_storeEditFragment"
+            app:destination="@id/storeEditFragment" />
+    </fragment>
+
+</navigation>
